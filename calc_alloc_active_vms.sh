@@ -1,8 +1,8 @@
 #!/bin/bash
 # Calculate KVM memory overcommitment ratio
-# Script ideas, email output throughout the day
-# or use this as part of a larger script to alert when overcommitment rater exceeds a threshold.
-# Enjoy
+# Script ideas: email output throughout the day or use this as part of a larger script to alert when overcommitment ratio 
+#   exceeds a threshold.
+# Enjoy, Raresteak
 totalmem=$(virsh -c qemu:///system nodememstats | grep total | awk {'print $3'})
 virsh -c qemu:///system domstats --list-active --balloon | grep balloon.current | awk -F= {'print $2'} > /tmp/.active_alloc_mem
 total=0
