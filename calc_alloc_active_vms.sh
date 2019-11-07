@@ -10,6 +10,8 @@ for indvVM in $(cat /tmp/.active_alloc_mem); do
   total=$((total+indvVM))
 done
 overcommitratio=$(echo "scale=2;${total}/${totalmem}" | bc -l)
-echo "Total host memory: $totalmem"
-echo "Total allocated to active vm: $total"
+swapUsed=$(free -k | grep Swap | awk {'print $3'})
+echo "Total host memory: ${totalmem}kb"
+echo "Total allocated to active vm: ${total}kb"
 echo "Overcommitment ratio $overcommitratio"
+echo "Current swap utilization: ${swapUsed}kb"
