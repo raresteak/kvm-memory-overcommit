@@ -7,4 +7,4 @@ Warning: TEST TEST TEST.  Overcommitment ratios of production kvm's should be lo
 
 A few words about overcommiting VCPU's.
 
-DO NOT allocate more VCPU to a _single_ vm than you have physical cpu's.  The ideal vm configurations are all single VCPU machines and only increasing VCPU's to vm's if they are riding at or near 100% and expected performance suffers.  The KVM host can handle many vm's with small VCPU configurations over the hosts physical cpu count.  Again strike a balance between busy vm's with less busy vm's.  
+DO NOT allocate more VCPU to a _single_ vm than you have physical cpu's.  The ideal vm configurations are all single VCPU machines and only increasing VCPU's to vm's if they are riding at or near 100% and expected performance suffers.  The KVM host can handle many vm's with small VCPU configurations over the hosts physical cpu count (Don't include virtual host cpu's like HyperThreads, etc - THOSE ARE NOT REAL!).  Again strike a balance between busy vm's with less busy vm's.  
